@@ -46,7 +46,7 @@ def scale_data(X):
     Returns:   Y : a 2xN array of scaled data
     
     '''
-    # Your code here 
+    return map(lambda c: [c[0] * 2, c[1] * 0.5], X)
     
 def standardise_data(X):
     ''' Returns a centered, scaled version of X, the same size as X.
