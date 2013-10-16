@@ -46,7 +46,8 @@ def scale_data(X):
     Returns:   Y : a 2xN array of scaled data
     
     '''
-    return map(lambda c: [c[0] * 2, c[1] * 0.5], X)
+    x, y = X
+    return [map(lambda c: c * 2, x), map(lambda c: c * 0.5, y)]
     
 def standardise_data(X):
     ''' Returns a centered, scaled version of X, the same size as X.
@@ -58,8 +59,7 @@ def standardise_data(X):
     
     Instructions: Do not use for-loops. Use sp.mean and sp.std
     '''
-    # Your code here 
-    
+    print map(lambda c: map(lambda i: i - sp.mean(c)/sp.std(c), c), X)
     
 ''' ---- Task 2 ---- '''
 
