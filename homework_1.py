@@ -66,9 +66,6 @@ def standardise_data(X):
 
     return vouterfunc(X)
 
-    # return map(lambda c: map(lambda i: (i - sp.mean(c))/sp.std(c), c), X)
-
-
 ''' ---- Task 2 ---- '''
 
 def task2():
@@ -100,8 +97,15 @@ def mean_for(X):
     Instructions: Use for-loops to replicate sp.mean(X,1)
     Do not use sp.mean or sp.sum
     '''
-    # Your code here
 
+    dim = sp.shape(X)
+    avg = sp.zeros((dim[0], 1))
+    for i in range(dim[0]):
+    	s = 0
+    	for j in range(dim[1]):
+    		s = s+X[i][j]
+    	avg[i] = s/dim[1]
+    return avg
 
 def timedcall(fn, *args):
     '''Call function with args; return the time in seconds and result.
