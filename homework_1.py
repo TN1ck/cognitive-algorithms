@@ -21,6 +21,15 @@ def task1():
     # Your code here
     # Hint: Use the functions pl.scatter(x[0,:],[1,:],c='r'), pl.hold(True),
     # pl.legend, pl.title, pl.xlabel, pl.ylabel
+    fig = pl.figure()
+    ax1 = fig.add_subplot(111)
+    ax1.scatter(X[0], X[1], c='y', label='Raw data')
+    ax1.scatter(X2[0], X2[1], c='r', label='Scaled data')
+    ax1.scatter(X3[0], X3[1], c='b', label='Standardised data')
+    pl.title('Simple transformations of Gaussian Data')
+    # ax1.title('Simple transformations of Gaussian Data') ???? -> does not work
+    ax1.legend()
+    ax1.figure.show()
 
 def generate_data(N):
     '''
@@ -36,7 +45,6 @@ def generate_data(N):
     mean = [1, 2]
     cov = sp.identity(2)
     return sp.random.multivariate_normal(mean, cov, (N)).T
-
 
 def scale_data(X):
     '''
@@ -62,11 +70,11 @@ def standardise_data(X):
     Instructions: Do not use for-loops. Use sp.mean and sp.std
     '''
 
-    vouterfunc = sp.vectorize(lambda c: sp.vectorize(lambda i: (i - sp.mean(c))/sp.std(c))(c))
+    # vouterfunc = sp.vectorize(lambda c: sp.vectorize(lambda i: (i - sp.mean(c))/sp.std(c))(c))
 
-    return vouterfunc(X)
+    # return vouterfunc(X)
 
-    # return map(lambda c: map(lambda i: (i - sp.mean(c))/sp.std(c), c), X)
+    return map(lambda c: map(lambda i: (i - sp.mean(c))/sp.std(c), c), X)
 
 
 ''' ---- Task 2 ---- '''
