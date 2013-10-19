@@ -37,6 +37,7 @@ def generate_data(N):
     cov = sp.identity(2)
     return sp.random.multivariate_normal(mean, cov, (N)).T
 
+
 def scale_data(X):
     '''
     Scales the data in X by 2 in x-direction and by 0.5 in y-direction
@@ -47,7 +48,8 @@ def scale_data(X):
 
     '''
     x, y = X
-    return [map(lambda c: c * 2, x), map(lambda c: c * 0.5, y)]
+    return [x * 2, y * 0.5]
+
 
 def standardise_data(X):
     ''' Returns a centered, scaled version of X, the same size as X.
@@ -124,3 +126,4 @@ def test_prep():
     x = generate_data(200)
     assert(x.shape == (2, 200))
     print 'Tests passed'
+test_prep()
