@@ -27,6 +27,8 @@ def task1():
     ax1.scatter(X2[0], X2[1], c='r', label='Scaled data')
     ax1.scatter(X3[0], X3[1], c='b', label='Standardised data')
     pl.title('Simple transformations of Gaussian Data')
+    pl.xlabel('x')
+    pl.ylabel('y')
     # ax1.title('Simple transformations of Gaussian Data') ???? -> does not work
     ax1.legend()
     ax1.figure.show()
@@ -106,7 +108,7 @@ def mean_for(X):
     '''
 
     dim = sp.shape(X)
-    avg = sp.zeros((dim[0], 1))
+    avg = sp.zeros((dim[0],))
     for i in range(dim[0]):
     	s = 0
     	for j in range(dim[1]):
@@ -143,3 +145,4 @@ def test_prep():
     x = generate_data(200)
     assert(x.shape == (2, 200))
     print 'Tests passed'
+
