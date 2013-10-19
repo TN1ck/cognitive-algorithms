@@ -17,6 +17,14 @@ def task1():
     X2 = scale_data(X)
     X3 = standardise_data(X)
 
+    # pdb.set_trace()
+    pl.scatter(X[0,:],X[1,:],c='y')
+    pl.hold(True)
+    pl.scatter(X2[0,:],X2[1,:],c='r')
+    pl.hold(True)
+    pl.scatter(X3[0,:],X3[1,:],c='b')
+    pl.show()
+
     # Plot data
     # Your code here
     # Hint: Use the functions pl.scatter(x[0,:],[1,:],c='r'), pl.hold(True),
@@ -48,7 +56,7 @@ def scale_data(X):
 
     '''
     x, y = X
-    return [x * 2, y * 0.5]
+    return sp.array([x * 2, y * 0.5])
 
 
 def standardise_data(X):
@@ -62,9 +70,7 @@ def standardise_data(X):
     Instructions: Do not use for-loops. Use sp.mean and sp.std
     '''
 
-    vouterfunc = sp.vectorize(lambda c: sp.vectorize(lambda i: (i - sp.mean(c))/sp.std(c))(c))
-
-    return vouterfunc(X)
+    return sp.array(map(lambda c: map(lambda i: (i - sp.mean(c))/sp.std(c), c), X))
 
 ''' ---- Task 2 ---- '''
 
