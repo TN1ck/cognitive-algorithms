@@ -61,7 +61,8 @@ def standardise_data(X):
 
     Instructions: Do not use for-loops. Use sp.mean and sp.std
     '''
-    print map(lambda c: map(lambda i: i - sp.mean(c)/sp.std(c), c), X)
+    return map(lambda c: map(lambda i: (i - sp.mean(c))/sp.std(c), c), X)
+
 
 ''' ---- Task 2 ---- '''
 
@@ -126,4 +127,3 @@ def test_prep():
     x = generate_data(200)
     assert(x.shape == (2, 200))
     print 'Tests passed'
-test_prep()
