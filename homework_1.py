@@ -61,7 +61,12 @@ def standardise_data(X):
 
     Instructions: Do not use for-loops. Use sp.mean and sp.std
     '''
-    return map(lambda c: map(lambda i: (i - sp.mean(c))/sp.std(c), c), X)
+
+    vouterfunc = sp.vectorize(lambda c: sp.vectorize(lambda i: (i - sp.mean(c))/sp.std(c))(c))
+
+    return vouterfunc(X)
+
+    # return map(lambda c: map(lambda i: (i - sp.mean(c))/sp.std(c), c), X)
 
 
 ''' ---- Task 2 ---- '''
