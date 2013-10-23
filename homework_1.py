@@ -23,15 +23,19 @@ def task1():
     # pl.legend, pl.title, pl.xlabel, pl.ylabel
     fig = pl.figure()
     ax1 = fig.add_subplot(111)
-    ax1.scatter(X[0], X[1], c='y', label='Raw data')
+    print ax1.scatter(X[0], X[1], c='y', label='Raw data')
     ax1.scatter(X2[0], X2[1], c='r', label='Scaled data')
     ax1.scatter(X3[0], X3[1], c='b', label='Standardised data')
     pl.title('Simple transformations of Gaussian Data')
     pl.xlabel('x')
     pl.ylabel('y')
+    pl.xticks(range(-6,10,2))
+    pl.yticks(range(-4,5,1))
     # ax1.title('Simple transformations of Gaussian Data') ???? -> does not work
-    ax1.legend()
-    ax1.figure.show()
+    ax1.legend(scatterpoints=1)
+    pl.savefig('task_1_340528.pdf')
+    # ax1.figure.show()
+
 
 def generate_data(N):
     '''
@@ -40,7 +44,7 @@ def generate_data(N):
 
     Usage:     x = generate_data(N)
 
-    Returns:   x : a 2xN array    [[1...N], [1...N]]
+    Returns:   x : a 2xN array
 
     Instructions: Use sp.random.mutivariate_normal
     '''
