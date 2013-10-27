@@ -1,4 +1,5 @@
-#your name and matrikelnr
+# Tom Nick - 340528
+# Maximilian Bachl - 341455
 import pylab as pl
 import scipy as sp
 import time
@@ -33,7 +34,7 @@ def task1():
     pl.yticks(range(-4,5,1))
     # ax1.title('Simple transformations of Gaussian Data') ???? -> does not work
     ax1.legend(scatterpoints=1)
-    pl.savefig('task_1_340528.pdf')
+    pl.savefig('task_1_340528_341455.pdf')
     # ax1.figure.show()
 
 
