@@ -65,7 +65,13 @@ def train_ncc(X,Y):
     Output:      w       -  1D array of length D, weight vector
                  b       -  bias term for linear classification
     '''
-    # ... your code here
+    w_pos = sp.mean(X.T[(Y ==  1).nonzero()], 0)
+    w_neg = sp.mean(X.T[(Y == -1).nonzero()], 0)
+    w  = w_pos - w_neg
+    b = 0.5*(w_pos.T*w_pos - w_neg.T*w_neg)
+
+    return w,b
+
 
 def plot_histogram(X, Y, w, b):
     ''' Plots a histogram of classifier outputs (w^T X) for each class with pl.hist
@@ -115,8 +121,6 @@ def analyse_accuracies_perceptron(digit = 3):
     pl.title('Digit recognition accuracy')
     pl.xlabel('Iterations')
     pl.ylabel('Accuracy')
-
-analyse_accuracies_perceptron()
 
 def plot_img(a):
     ''' Plots one image
