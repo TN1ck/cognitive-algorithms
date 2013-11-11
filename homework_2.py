@@ -85,7 +85,14 @@ def plot_histogram(X, Y, w, b):
                     b       -  bias term for linear classification
 
     '''
-    # ... your code here
+    wTX = w.dot(X)
+    wrong = (sp.sign(wTX) != Y).nonzero()[0]
+    correct = (sp.sign(wTX) == Y).nonzero()[0]
+    print wrong
+    pl.title("Acc " + str(float(correct.shape[0])/float(X.shape[1])))
+    pl.hist(wTX[correct], label="test")
+    pl.hist(wTX[wrong],label="target")
+
 
 def compare_classifiers(digit = 3):
     ''' Loads usps.mat data, trains the perceptron and the Nearest centroid classifiers,
@@ -108,6 +115,8 @@ def compare_classifiers(digit = 3):
     pl.title('Perceptron')
     pl.subplot(2,2,4)
     plot_histogram(X, Y, w_per, b_per)
+
+compare_classifiers()
 
 def analyse_accuracies_perceptron(digit = 3):
     ''' Loads usps.mat data and plots digit recognition accuracy in the linear perceptron
@@ -149,3 +158,4 @@ def plot_imgs(X, Y):
         m = classneg[sp.random.random_integers(0, classneg.shape[0]-1)]
         pl.subplot(2,3,4+i)
         plot_img(X[:, m])
+
