@@ -17,7 +17,6 @@ def load_usps_data(fname, digit=3):
     data = io.loadmat(fname)
     # extract images and labels
     X = data['data_patterns']
-    print(X.shape)
     Y = data['data_labels']
     Y = Y[digit,:]
     return X, Y
@@ -40,6 +39,7 @@ def train_perceptron(X,Y,iterations=200,eta=.1):
     X = sp.concatenate((sp.ones((1,X.shape[1])), X))
     #initialize weight vector
     weights = sp.ones((X.shape[0]))/X.shape[0]
+    # print weights
     for it in sp.arange(iterations):
         # indices of misclassified data
         wrong = (sp.sign(weights.dot(X)) != Y).nonzero()[0]
@@ -93,7 +93,7 @@ def plot_histogram(X, Y, w, b):
     target =     w.dot(X[:,(Y == 1)])
     non_target = w.dot(X[:,(Y == -1)])
 
-    pl.title("Acc " + str(float(correct.shape[0])/float(X.shape[1])))
+    pl.title("Acc " + str(int(round(float(correct.shape[0])/float(X.shape[1]), 2)*100)) + " %")
     pl.hist(non_target, label="target")
     pl.hist(target, label="non target")
 
