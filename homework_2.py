@@ -47,9 +47,9 @@ def train_perceptron(X,Y,iterations=200,eta=.1):
         if wrong.shape[0] > 0:
             # pick a random misclassified data point
             ran_index = sp.random.randint(0, wrong.shape[0])
-            ran = X.T[wrong[ran_index]]
+            ran = X[:,wrong[ran_index]]
             #update weight vector (use variable learning rate (eta/(1.+it)) )
-            weights = weights + ran*Y[ran_index]*(eta/(1.+it))
+            weights = weights + ran*Y[wrong[ran_index]]*(eta/(1.+it))
             if it % 20 == 0:
                 print "Iteration %d: Accuracy %0.2f" % (it, acc[it])
     b = -weights[0]
@@ -68,7 +68,7 @@ def train_ncc(X,Y):
     w_pos = sp.mean(X.T[(Y ==  1).nonzero()], 0)
     w_neg = sp.mean(X.T[(Y == -1).nonzero()], 0)
     w  = w_pos - w_neg
-    b = 0.5*(w_pos.T*w_pos - w_neg.T*w_neg)
+    b = 0.5*(w_pos.dot(w_pos) - w_neg.dot(w_neg))
 
     return w,b
 
@@ -86,12 +86,15 @@ def plot_histogram(X, Y, w, b):
 
     '''
     wTX = w.dot(X)
-    wrong = (sp.sign(wTX) != Y).nonzero()[0]
-    correct = (sp.sign(wTX) == Y).nonzero()[0]
-    print wrong
+    wrong = (sp.sign(wTX - b) != Y).nonzero()[0]
+    correct = (sp.sign(wTX - b) == Y).nonzero()[0]
+
+    target =     w.dot(X[:,(Y == 1)])
+    non_target = w.dot(X[:,(Y == -1)])
+
     pl.title("Acc " + str(float(correct.shape[0])/float(X.shape[1])))
-    pl.hist(wTX[correct], label="test")
-    pl.hist(wTX[wrong],label="target")
+    pl.hist(non_target, label="target")
+    pl.hist(target, label="non target")
 
 
 def compare_classifiers(digit = 3):
@@ -116,8 +119,6 @@ def compare_classifiers(digit = 3):
     pl.subplot(2,2,4)
     plot_histogram(X, Y, w_per, b_per)
 
-compare_classifiers()
-
 def analyse_accuracies_perceptron(digit = 3):
     ''' Loads usps.mat data and plots digit recognition accuracy in the linear perceptron
     Definition: analyse_perceptron(digit = 3)
@@ -130,6 +131,8 @@ def analyse_accuracies_perceptron(digit = 3):
     pl.title('Digit recognition accuracy')
     pl.xlabel('Iterations')
     pl.ylabel('Accuracy')
+
+compare_classifiers()
 
 def plot_img(a):
     ''' Plots one image
