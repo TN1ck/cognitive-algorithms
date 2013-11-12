@@ -17,6 +17,7 @@ def load_usps_data(fname, digit=3):
     data = io.loadmat(fname)
     # extract images and labels
     X = data['data_patterns']
+    print(X.shape)
     Y = data['data_labels']
     Y = Y[digit,:]
     return X, Y
@@ -118,6 +119,7 @@ def compare_classifiers(digit = 3):
     pl.title('Perceptron')
     pl.subplot(2,2,4)
     plot_histogram(X, Y, w_per, b_per)
+    pl.show()
 
 def analyse_accuracies_perceptron(digit = 3):
     ''' Loads usps.mat data and plots digit recognition accuracy in the linear perceptron
@@ -131,8 +133,6 @@ def analyse_accuracies_perceptron(digit = 3):
     pl.title('Digit recognition accuracy')
     pl.xlabel('Iterations')
     pl.ylabel('Accuracy')
-
-compare_classifiers()
 
 def plot_img(a):
     ''' Plots one image
@@ -162,3 +162,4 @@ def plot_imgs(X, Y):
         pl.subplot(2,3,4+i)
         plot_img(X[:, m])
 
+compare_classifiers()
