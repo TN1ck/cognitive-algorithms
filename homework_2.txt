@@ -1,6 +1,0 @@
-Tom Nick 340528
-Maximilian Bachl 341455
-
-1. The data set contains 2007 datapoints with each image having 256 pixels so one image is 16*16 pixels.
-
-6. It could be the case that we just had bad luck with the current data set. But generally the perceptron is probably better suited than the NCC for this kind of problem.

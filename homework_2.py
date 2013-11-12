@@ -1,3 +1,5 @@
+# Tom Nick - 340528
+# Maximilian Bachl - 341455
 import scipy as sp
 import scipy.io as io
 import pdb
@@ -86,16 +88,16 @@ def plot_histogram(X, Y, w, b):
                     b       -  bias term for linear classification
 
     '''
-    wTX = w.dot(X)
-    wrong = (sp.sign(wTX - b) != Y).nonzero()[0]
-    correct = (sp.sign(wTX - b) == Y).nonzero()[0]
+    correct = (sp.sign(w.dot(X) - b) == Y).nonzero()[0]
 
     target =     w.dot(X[:,(Y == 1)])
     non_target = w.dot(X[:,(Y == -1)])
 
-    pl.title("Acc " + str(int(round(float(correct.shape[0])/float(X.shape[1]), 2)*100)) + " %")
-    pl.hist(non_target, label="target")
-    pl.hist(target, label="non target")
+    pl.title("Acc %0.0f%%" % (float(correct.shape[0])/X.shape[1] * 100,))
+    pl.xlabel('w^T X')
+    pl.hist(non_target)
+    pl.hist(target)
+    pl.legend(["non target", "target"], loc=0)
 
 
 def compare_classifiers(digit = 3):
@@ -119,7 +121,7 @@ def compare_classifiers(digit = 3):
     pl.title('Perceptron')
     pl.subplot(2,2,4)
     plot_histogram(X, Y, w_per, b_per)
-    pl.show()
+    pl.savefig('task_5_340528_341455.pdf')
 
 def analyse_accuracies_perceptron(digit = 3):
     ''' Loads usps.mat data and plots digit recognition accuracy in the linear perceptron
@@ -133,6 +135,7 @@ def analyse_accuracies_perceptron(digit = 3):
     pl.title('Digit recognition accuracy')
     pl.xlabel('Iterations')
     pl.ylabel('Accuracy')
+    pl.savefig('task_2_340528_341455.pdf')
 
 def plot_img(a):
     ''' Plots one image
@@ -162,4 +165,4 @@ def plot_imgs(X, Y):
         pl.subplot(2,3,4+i)
         plot_img(X[:, m])
 
-compare_classifiers()
+
