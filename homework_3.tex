@@ -1,0 +1,55 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[german]{babel}
+\setlength{\parindent}{0cm}
+\usepackage{setspace}
+\usepackage{mathpazo}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{wasysym} 
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{ulem}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{ulem}
+\usepackage{stmaryrd }
+\usepackage[a4paper,
+left=1.8cm, right=1.8cm,
+top=2.0cm, bottom=2.0cm]{geometry}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usetikzlibrary{trees,petri,decorations,arrows,automata,shapes,shadows,positioning,plotmarks}
+
+
+\newcommand{\rf}{\right\rfloor}
+\newcommand{\lf}{\left\lfloor}
+\newcommand{\tabspace}{15cm}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+\begin{center}
+\Large{Cognivite Algorithms: Assignment 3} \\
+\end{center}
+\begin{tabbing}
+Tom Nick \hspace{2cm}\= - 340528\\
+Maximilian Bachl \> - 341455 \\
+\end{tabbing}
+
+\section*{Aufgabe 2}
+\begin{enumerate}
+    \item The Perceptron produces highly varying results, it even outperforms the LDA at sometimes while at other times it is even beaten by the NCC. 
+    \item Yes, the data is optimal because the LDA makes the assumption of Gaussian distributed data. This is exactly the case with the SciPy method \texttt{multivariate\_normal}.
+    \item If one reduced the variance of the data, the NCC would become as good as the LDA.
+\end{enumerate}
+
+
+
+
+
+
+\end{document}
