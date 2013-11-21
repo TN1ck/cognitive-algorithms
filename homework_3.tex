@@ -40,12 +40,14 @@ Tom Nick \hspace{2cm}\= - 340528\\
 Maximilian Bachl \> - 341455 \\
 \end{tabbing}
 
-\section*{Aufgabe 2}
+\section*{Exercise 2}
 \begin{enumerate}
-    \item The Perceptron produces highly varying results, it even outperforms the LDA at sometimes while at other times it is even beaten by the NCC. 
+    \item The Perceptron produces highly varying results, it even outperforms the LDA at sometimes while at other times it is beaten by the NCC. 
     \item Yes, the data is optimal because the LDA makes the assumption of Gaussian distributed data. This is exactly the case with the SciPy method \texttt{multivariate\_normal}.
-    \item If one reduced the variance of the data, the NCC would become as good as the LDA.
+    \item In the used covariance matrix used for the test the upper left value of the matrix is 5 and the lower right is $0.5$. Thus the data is always stretched more from left to right than from top to bottom like it is seen in resulting plots. The NCC achieves comparable values to the LDA if the covariance matrix has equal values on the diagonal.
 \end{enumerate}
+\section*{Exercise 3}
+
 
 
 
