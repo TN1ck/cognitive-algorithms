@@ -257,7 +257,7 @@ def crossvalidate(X,Y, f=5, trainfun=train_ncc):
 		acc_train[ifold] = sp.sum(sp.sign(w.dot(X[:,train])-b)==Y[train])/sp.double(train.shape[0])
 		acc_test[ifold] = sp.sum(sp.sign(w.dot(X[:,test])-b)==Y[test])/sp.double(test.shape[0])
 
-	pdb.set_trace()
+	# pdb.set_trace()
 	return acc_train,acc_test
 
 compare_classifiers(False)

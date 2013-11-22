@@ -47,11 +47,21 @@ Maximilian Bachl \> - 341455 \\
     \item In the used covariance matrix used for the test the upper left value of the matrix is 5 and the lower right is $0.5$. Thus the data is always stretched more from left to right than from top to bottom like it is seen in resulting plots. The NCC achieves comparable values to the LDA if the covariance matrix has equal values on the diagonal.
 \end{enumerate}
 \section*{Exercise 3}
+It takes a set of training data and the associated labeling. Then we separate the data in two pieces: Training data $\frac 1 f$ and test data $\frac {f-1} {f}$. The algorithm is trained with the smaller part of the data and then its output vectors are used for the classification of the test part. This is done $f$ times and the accuracy values are saved and output.
 
+The performance for the test is better. Although there is a correlation between training and test performance: An algorithm that sucks in the training won't achieve good results in the test phase.
+\section*{4}
+I'ld prefer the Perceptron for the digits. The digit data is not normally-distributed and thus the LDA performs very bad. 
+For the normally distributed BCI data the LDA is best.\\
 
+USPS:
 
+\leavevmode\vadjust{\vspace{-\baselineskip}}\newline
+\includegraphics[scale=0.5]{usps}
 
+BCI:
 
-
+\leavevmode\vadjust{\vspace{-\baselineskip}}\newline
+\includegraphics[scale=0.5]{bci}
 
 \end{document}
