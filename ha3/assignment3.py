@@ -30,9 +30,9 @@ def train_lda(X,Y):
     s_W = sum1 + sum2
 
     optimal_w = sp.linalg.inv(s_W).dot(mean_pos - mean_neg)
-    
+
     b = ((optimal_w.T.dot(mean_pos) + optimal_w.T.dot(mean_neg))[0,0])/2
-    
+
     return optimal_w[:,0], b
 
 def load_usps_data(fname, digit=3):
@@ -241,4 +241,4 @@ def crossvalidate(X,Y, f=5, trainfun=train_ncc):
     # pdb.set_trace()
     return acc_train,acc_test
 
-compare_classifiers(False)
+compare_classifiers(True)
