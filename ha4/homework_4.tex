@@ -33,13 +33,36 @@ top=2.0cm, bottom=2.0cm]{geometry}
 
 \begin{document}
 \begin{center}
-\Large{Cognivite Algorithms: Assignment 4} \\
+\Large{Cognitive Algorithms: Assignment 4} \\
 \end{center}
 \begin{tabbing}
 Tom Nick \hspace{2cm}\= - 340528\\
 Maximilian Bachl \> - 341455 \\
 \end{tabbing}
 
-\section*{Exercise 1}
+\section*{Exercise 2}
+
+The dimensionality of $X_\textrm{train}$ is $D_\textrm{X} \times D_\textrm{X}$.\\
+The dimensionality of $W$ is $D_\textrm{X} \times D_\textrm{Y}$.\\
+The dimensionality of $Y_\textrm{test}$ is $D_\textrm{X} \times N_\textrm{te}$.
+
+\section*{Exercise 3}
+
+The training set contains 5000 data points. The test set has 5255 data points. There are 192 e
+electrodes used in the experiment.
+
+\section*{Exercise 4}
+
+Of course the training data performs better and the predictions are more accurate. But especially in the diagram at the bottom which shows time and y-axis makes it clear that the prediction is sometimes very inappropriate.
+
+\section*{Exercise 5}
+
+When you use the non-logarithmized data you clearly see that the performance difference between training and test data becomes less.
+
+Actually the smaller difference arises from the fact that the OLS performs worse for its own training data than with logarithmized data.
+
+\section*{Exercise 6}
+
+Yes, it is obvious that stronger impulse does not increase the actual hand movement by the same amount. The true relationship is a logarithmic one like it is common for many human senses and motions.
 
 \end{document}

@@ -11,13 +11,16 @@ def load_myo_data(fname):
     data = loadmat(fname)
     # extract data and hand positions
     X = data['training_data']
-    X = sp.log(X)
+    # X = sp.log(X)
     Y = data['training_labels']
     #Split data into training and test data
     X_train = X[:, :5000]
     X_test = X[:, 5000:]
     Y_train = Y[:, :5000]
     Y_test = Y[:, 5000:]
+
+    # pdb.set_trace()
+
     return X_train,Y_train,X_test, Y_test
 
 def train_ols(X_train, Y_train):
@@ -78,6 +81,7 @@ def predict_handposition():
     pl.plot(Y_hat_test[1,:600], 'r--')
     pl.xlabel('Time')
     pl.ylabel('y position')
+    pl.show()
 
 def test_assignment4():
     ##Example without noise
@@ -107,4 +111,4 @@ def test_assignment4():
     pl.legend(loc = 'lower right')
     pl.show()
 
-test_assignment4()
+predict_handposition()
