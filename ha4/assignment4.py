@@ -1,3 +1,5 @@
+# Tom Nick - 340528
+# Maximilian Bachl - 341455
 import pylab as pl
 import scipy as sp
 from numpy.linalg import inv
