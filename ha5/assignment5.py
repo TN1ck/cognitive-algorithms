@@ -20,7 +20,7 @@ def load_data(fname):
     Y_train = Y_train[:, :1000]
     return X_train,Y_train
 
-def GaussianKernel(X1, X2, kwdith):
+def GaussianKernel(X1, X2, kwidth):
     ''' Compute Gaussian Kernel
     Input: X1    - DxN1 array of N1 data points with D features
            X2    - DxN2 array of N2 data points with D features
@@ -41,6 +41,11 @@ def train_krr(X_train, Y_train,kwidth,llambda):
     Output:      alphas   -  NxD2 array, weighting of training data used for apply_krr
     '''
     # your code here
+    K = GaussianKernel(X_train, X_train, kwidth)
+    foo = K + (llambda * np.identity(K.shape[0]))
+    baz = np.linalg.inv(foo)
+    alpha = baz.dot(Y_train.T)
+    return alpha
 
 def apply_krr(alphas, X_train, X_test, kwidth):
     ''' Applys kernel ridge regression (krr)
@@ -51,6 +56,11 @@ def apply_krr(alphas, X_train, X_test, kwidth):
     Output:     Y_test      -  D2xNte array
     '''
     # your code here
+    k = GaussianKernel(X_test, X_train, kwidth)
+    Y_test = k.dot(alphas).T
+    return Y_test
+
+
 
 def train_ols(X_train, Y_train):
     ''' Trains ordinary least squares (ols) regression
@@ -99,6 +109,9 @@ def test_sine_toydata(kwidth = 1, llambda = 1):
     pl.legend(loc = 'lower right')
     pl.show()
 
+
+
+test_sine_toydata(1,1)
 
 def crossvalidate_krr(X,Y,f=5, kwidths=10.0**np.array([0, 1, 2]), llambdas=10.0**np.array([-4, -2, 0])):
     '''
