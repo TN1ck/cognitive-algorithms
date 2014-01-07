@@ -109,7 +109,7 @@ def test_sine_toydata(kwidth = 1, llambda = 1):
     pl.legend(loc = 'lower right')
     pl.show()
 
-# test_sine_toydata(1,1)
+test_sine_toydata(1,1)
 
 def crossvalidate_krr(X,Y,f=5, kwidths=10.0**np.array([0, 1, 2]), llambdas=10.0**np.array([-4, -2, 0])):
     '''
@@ -179,4 +179,4 @@ def compute_rsquare(yhat,Y):
     '''compute coefficient of determination'''
     return 1 - (sp.var((yhat - Y),axis=1).sum()/sp.var(Y,axis=1).sum())
 
-test_handpositions()
+# test_handpositions()
