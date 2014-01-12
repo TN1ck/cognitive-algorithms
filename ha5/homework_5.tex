@@ -1,0 +1,77 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[english]{babel}
+\setlength{\parindent}{0cm}
+\usepackage{setspace}
+\usepackage{mathpazo}
+\usepackage{listings}
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{wasysym} 
+\usepackage{booktabs}
+\usepackage{verbatim}
+\usepackage{ulem}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{stmaryrd}
+\usepackage[a4paper,
+left=1.8cm, right=1.8cm,
+top=2.0cm, bottom=2.0cm]{geometry}
+\usepackage{tabularx}
+%\usepackage{tikz}
+%\usetikzlibrary{trees,petri,decorations,arrows,automata,shapes,shadows,positioning,plotmarks}
+
+
+\newcommand{\rf}{\right\rfloor}
+\newcommand{\lf}{\left\lfloor}
+\newcommand{\tabspace}{15cm}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+\begin{center}
+\Large{Cognitive Algorithms: Assignment 5} \\
+\end{center}
+\begin{tabbing}
+Tom Nick \hspace{2cm}\= - 340528\\
+Maximilian Bachl \> - 341455 \\
+\end{tabbing}
+
+\section*{Exercise 2}
+
+\begin{enumerate}
+
+\item
+If one chooses the width too small, the KRR starts to overfit, which means that it doesn't generalize so well anymore. In this case we intuitively know that the result should resemble a sine wave and thus we know that the overgeneralized sample is bad -- because it is a rather shaky sine wave that doesn't correspond to reality.
+
+When choosing 10 the KRR overgeneralizes and the resulting plot is almost like the OLS and by intuition we know that this result can't be right.
+
+\item
+When we choose the regularization parameter $\lambda$ to be a very small number, the model overfits and is too complex.
+
+If we choose the regularization parameter to high on the other hand then the complexity gets restricted too much and the same effect occurs as when you choose the kernel width to be very wide.
+
+\end{enumerate}
+
+\section*{Exercise 3}
+
+For each $\lambda$ and $\sigma$ there are 3 values in a list. The usual cross-validation is performed and each combination of $\lambda$ and $\sigma$ is tried out. Then the best $\lambda$ and $\sigma$ are chosen. 
+
+\section*{Exercise 4}
+
+The boxplot shows the mean and the standard deviation as well as well as the most remote outliers. The exact style of the plot however depends on the specific implementation, sometimes the median is also used.
+
+Our implementation uses the median.
+
+\section*{Exercise 5}
+
+Clearly for performance reasons. Even with 1000 data points the cross-folding test takes forever :)
+
+Furthermore complexity grows polynomially here because of the nested loops in the cross validation section. So it would have taken at least 10 times longer, but more realistic is a number like 100 or 1000 regarding the polynormial growth.
+
+\end{document}
+
+
