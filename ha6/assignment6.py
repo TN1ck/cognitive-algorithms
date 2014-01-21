@@ -1,3 +1,5 @@
+# Tom Nick - 340528
+# Maximilian Bachl - 341455
 import numpy as np
 import pylab as pl
 import scipy as sp
