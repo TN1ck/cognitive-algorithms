@@ -87,7 +87,7 @@ def plot_trends(ntopics=8,method=nmf,topwhat=10):
 		pl.legend([thislabel])
 		days = sp.arange(0,BOW.shape[-1],24*7)
 		pl.xticks(days,dates[days],rotation=20)
-    # pl.show()
+    pl.show()
 
 def test_assignment6():
     ##Example 1
@@ -116,4 +116,5 @@ def test_assignment6():
     pl.legend(loc=1)
     pl.show()
 
-test_assignment6()
+plot_trends(method=pca)
+# test_assignment6()
