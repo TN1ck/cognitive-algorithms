@@ -13,7 +13,7 @@ def pca(X,ncomp=10):
 	                 sorted by their eigenvalues
 	        H       - ncomp x N array of projected data '''
     ncomp = min(np.hstack((X.shape, ncomp)))
-    # print(X)
+    print(ncomp)
     #center the data
     # pdb.set_trace()
     mean = np.mean(X, axis=1)
@@ -35,12 +35,19 @@ def pca(X,ncomp=10):
     # pdb.set_trace()
     eigvals = eigvals[0:ncomp]
     eigenvectors = lg.eigh(K, eigvals=(num_of_eigvals-ncomp, num_of_eigvals-1))
+    # pdb.set_trace()
     eigenvectors = eigenvectors[1]
     # pdb.set_trace()
     # compute W and H
     W = X.dot(eigenvectors)
 
+    # Hack of the century!!!!111!11
+    W = W.T
+    W = W[::-1]
+    W = W.T
+
     H = (W.T).dot(X)
+
     return W, H
 
 def get_data(fname='newsdata_BOW.npz'):
