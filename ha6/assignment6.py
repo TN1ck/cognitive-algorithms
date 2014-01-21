@@ -13,7 +13,7 @@ def pca(X,ncomp=10):
 	                 sorted by their eigenvalues
 	        H       - ncomp x N array of projected data '''
     ncomp = min(np.hstack((X.shape, ncomp)))
-    print(ncomp)
+    # print(ncomp)
     #center the data
     # pdb.set_trace()
     mean = np.mean(X, axis=1)
