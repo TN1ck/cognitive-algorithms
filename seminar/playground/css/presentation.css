@@ -1,0 +1,55 @@
+.reveal h2 {
+  line-height: 1.3em !important;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.float-left {
+  float: left;
+}
+
+strong {
+  font-size: 2em !important;
+  line-height: 1em !important;
+}
+
+.no-border {
+  border: none !important;
+}
+
+ul li {
+  padding-top: 0.2em !important;
+  padding-bottom: 0.2em !important;
+}
+
+body, h1, h2, h3, h4, h5, p, b, strong, li, dt, dd {
+  font-family: Lato, sans-serif !important;
+}
+
+b, dt {
+  color: rgb(218, 100, 44) !important;
+}
+
+body {
+  background-color: #FAFAFA !important;
+}
+
+
+dt {
+  font-weight: bold;
+}
+
+.MathJax nobr {
+  color: black;
+}
+
+.MathJax_Display .MathJax nobr {
+  color: black;
+}
+

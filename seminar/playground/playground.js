@@ -1,0 +1,14 @@
+goog.addDependency("base.js", ['goog'], []);
+goog.addDependency("../cljs/core.js", ['cljs.core'], ['goog.string', 'goog.array', 'goog.object', 'goog.string.StringBuffer']);
+goog.addDependency("../playground/svg.js", ['playground.svg'], ['cljs.core']);
+goog.addDependency("../cloact/ratom.js", ['cloact.ratom'], ['cljs.core']);
+goog.addDependency("../cloact/debug.js", ['cloact.debug'], ['cljs.core']);
+goog.addDependency("../cloact/impl/util.js", ['cloact.impl.util'], ['cljs.core', 'cloact.debug']);
+goog.addDependency("../cloact/impl/reactimport.js", ['cloact.impl.reactimport'], ['cljs.core']);
+goog.addDependency("../clojure/string.js", ['clojure.string'], ['cljs.core', 'goog.string', 'goog.string.StringBuffer']);
+goog.addDependency("../cloact/impl/template.js", ['cloact.impl.template'], ['cloact.impl.util', 'cljs.core', 'cloact.impl.reactimport', 'cloact.debug', 'clojure.string']);
+goog.addDependency("../cloact/impl/component.js", ['cloact.impl.component'], ['cloact.impl.util', 'cljs.core', 'cloact.impl.template', 'cloact.debug', 'cloact.ratom']);
+goog.addDependency("../cloact/core.js", ['cloact.core'], ['cloact.impl.util', 'cljs.core', 'cloact.impl.template', 'cloact.impl.component', 'cloact.ratom']);
+goog.addDependency("../playground/itr.js", ['playground.itr'], ['cloact.core', 'cljs.core']);
+goog.addDependency("../playground/slides.js", ['playground.slides'], ['cloact.core', 'playground.itr', 'cljs.core', 'playground.svg']);
+goog.addDependency("../playground/core.js", ['playground.core'], ['cloact.core', 'playground.slides', 'cljs.core']);

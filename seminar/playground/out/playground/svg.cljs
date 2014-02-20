@@ -1,0 +1,68 @@
+(ns playground.svg)
+
+(def eeg
+  "<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width='491px' height='191px' viewBox='0 0 491 191' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:sketch='http://www.bohemiancoding.com/sketch/ns'>
+    <title>cogalg</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g class='fragment' id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' sketch:type='MSPage'>
+        <g class='fragment' id='Path-1-+-channel-1' sketch:type='MSLayerGroup' transform='translate(0.000000, 21.000000)'>
+            <path d='M78,30.7964879 C82.7726131,30.7964879 88.5326634,9.56044006 89.8492462,13.8461544 C91.1658291,18.1318687 92.4824119,47.6373619 96.2675879,40.2197795 C100.052764,32.8021964 99.8881911,-0.851863594 102.356784,2.44484037 C104.825377,5.74154359 105.483669,50.4395603 107.787688,37.2527473 C110.091709,24.0659344 112.066583,-6.12658844 114.20603,1.12615898 C116.345477,8.37890621 115.851758,51.8953896 118.320352,43.9833019 C120.788945,36.071214 121.940954,-6.29142313 126.055276,1.12615897 C130.169598,8.54374139 129.346734,53.3789062 132.638191,42.6646205 C135.929648,31.9503348 137.904523,-3.48922568 140.866834,2.44484037 C143.829146,8.37890631 143.664573,42.4997855 147.778894,36.2360491 C151.893216,29.9723129 154.197235,-2.3076922 158.476131,3.79120868 C162.755025,9.89010979 164.236181,32.2800052 167.198492,27.6646205 C170.160804,23.0492359 173.129544,7.41758291 175.268991,12.1978027 C177.408439,16.9780225 179.047739,37.3622082 182.832915,30.7964887 C186.61809,24.2307692 184.643217,0.13714791 190.074121,9.03824691 C195.505025,17.9393458 191.71985,35.7692303 198.467337,33.2967026 C205.214824,30.8241751 201.265075,27.6646193 209,27.6646198' id='Path-1' stroke='#4A4A4A' stroke-width='2' sketch:type='MSShapeGroup'></path>
+            <text id='channel-1' sketch:type='MSTextLayer' font-family='Lato' font-size='14' font-weight='normal' fill='#000000'>
+                <tspan x='0' y='29'>channel 1</tspan>
+            </text>
+        </g>
+        <g class='fragment' id='Path-1-+-channel-2' sketch:type='MSLayerGroup' transform='translate(0.000000, 83.000000)'>
+            <path d='M78,30.7964879 C82.7726131,30.7964879 88.5326634,9.56044006 89.8492462,13.8461544 C91.1658291,18.1318687 92.4824119,47.6373619 96.2675879,40.2197795 C100.052764,32.8021964 99.8881911,-0.851863594 102.356784,2.44484037 C104.825377,5.74154359 105.483669,50.4395603 107.787688,37.2527473 C110.091709,24.0659344 112.066583,-6.12658844 114.20603,1.12615898 C116.345477,8.37890621 115.851758,51.8953896 118.320352,43.9833019 C120.788945,36.071214 121.940954,-6.29142313 126.055276,1.12615897 C130.169598,8.54374139 129.346734,53.3789062 132.638191,42.6646205 C135.929648,31.9503348 137.904523,-3.48922568 140.866834,2.44484037 C143.829146,8.37890631 143.664573,42.4997855 147.778894,36.2360491 C151.893216,29.9723129 154.197235,-2.3076922 158.476131,3.79120868 C162.755025,9.89010979 164.236181,32.2800052 167.198492,27.6646205 C170.160804,23.0492359 173.129544,7.41758291 175.268991,12.1978027 C177.408439,16.9780225 179.047739,37.3622082 182.832915,30.7964887 C186.61809,24.2307692 184.643217,0.13714791 190.074121,9.03824691 C195.505025,17.9393458 191.71985,35.7692303 198.467337,33.2967026 C205.214824,30.8241751 201.265075,27.6646193 209,27.6646198' id='Path-1' stroke='#4A4A4A' stroke-width='2' sketch:type='MSShapeGroup'></path>
+            <text id='channel-2' sketch:type='MSTextLayer' font-family='Lato' font-size='14' font-weight='normal' fill='#000000'>
+                <tspan x='0' y='27'>channel 2</tspan>
+            </text>
+        </g>
+        <g class='fragment' id='Path-1-+-channel-3' sketch:type='MSLayerGroup' transform='translate(0.000000, 145.000000)'>
+            <path d='M78,30.7964879 C82.7726131,30.7964879 88.5326634,9.56044006 89.8492462,13.8461544 C91.1658291,18.1318687 92.4824119,47.6373619 96.2675879,40.2197795 C100.052764,32.8021964 99.8881911,-0.851863594 102.356784,2.44484037 C104.825377,5.74154359 105.483669,50.4395603 107.787688,37.2527473 C110.091709,24.0659344 112.066583,-6.12658844 114.20603,1.12615898 C116.345477,8.37890621 115.851758,51.8953896 118.320352,43.9833019 C120.788945,36.071214 121.940954,-6.29142313 126.055276,1.12615897 C130.169598,8.54374139 129.346734,53.3789062 132.638191,42.6646205 C135.929648,31.9503348 137.904523,-3.48922568 140.866834,2.44484037 C143.829146,8.37890631 143.664573,42.4997855 147.778894,36.2360491 C151.893216,29.9723129 154.197235,-2.3076922 158.476131,3.79120868 C162.755025,9.89010979 164.236181,32.2800052 167.198492,27.6646205 C170.160804,23.0492359 173.129544,7.41758291 175.268991,12.1978027 C177.408439,16.9780225 179.047739,37.3622082 182.832915,30.7964887 C186.61809,24.2307692 184.643217,0.13714791 190.074121,9.03824691 C195.505025,17.9393458 191.71985,35.7692303 198.467337,33.2967026 C205.214824,30.8241751 201.265075,27.6646193 209,27.6646198' id='Path-1' stroke='#4A4A4A' stroke-width='2' sketch:type='MSShapeGroup'></path>
+            <text id='channel-3' sketch:type='MSTextLayer' font-family='Lato' font-size='14' font-weight='normal' fill='#000000'>
+                <tspan x='0' y='35'>channel 3</tspan>
+            </text>
+        </g>
+        <g class='fragment' id='Group' sketch:type='MSLayerGroup' transform='translate(245.000000, 40.000000)' font-family='Lato' fill='#000000'>
+            <text id='=>' sketch:type='MSTextLayer' font-size='24' font-weight='normal'>
+                <tspan x='0' y='68'>=&gt;</tspan>
+            </text>
+            <text id='[' sketch:type='MSTextLayer' font-size='96' font-weight='260'>
+                <tspan x='49' y='95'>[</tspan>
+            </text>
+            <text id=']' sketch:type='MSTextLayer' font-size='96' font-weight='260'>
+                <tspan x='156' y='95'>]</tspan>
+            </text>
+            <text id='4-6-4-8-5' sketch:type='MSTextLayer' font-size='20' font-weight='normal' letter-spacing='2.5'>
+                <tspan x='70' y='46'>4 6 4 8 5</tspan>
+            </text>
+            <text id='4-6-4-8-5' sketch:type='MSTextLayer' font-size='20' font-weight='normal' letter-spacing='2.5'>
+                <tspan x='70' y='70'>4 6 4 8 5</tspan>
+            </text>
+            <text id='4-6-4-8-5' sketch:type='MSTextLayer' font-size='20' font-weight='normal' letter-spacing='2.5'>
+                <tspan x='70' y='94'>4 6 4 8 5</tspan>
+            </text>
+        </g>
+        <g class='fragment' id='{-+-T' sketch:type='MSLayerGroup' transform='translate(299.000000, -5.000000)' font-family='Lato' fill='#000000'>
+            <text id='{' sketch:type='MSTextLayer' transform='translate(71.500000, 47.000000) rotate(-270.000000) translate(-71.500000, -47.000000) ' font-size='120' font-weight='260'>
+                <tspan x='52' y='93'>{</tspan>
+            </text>
+            <text id='T' sketch:type='MSTextLayer' font-size='20' font-weight='normal'>
+                <tspan x='57' y='20'>T</tspan>
+            </text>
+        </g>
+        <g class='fragment' id='{-+-C' sketch:type='MSLayerGroup' transform='translate(423.000000, 42.000000)' font-family='Lato' fill='#000000'>
+            <text id='{' sketch:type='MSTextLayer' transform='translate(19.500000, 72.000000) rotate(-180.000000) translate(-19.500000, -72.000000) ' font-size='120' font-weight='260'>
+                <tspan x='0' y='118'>{</tspan>
+            </text>
+            <text id='C' sketch:type='MSTextLayer' font-size='20' font-weight='normal'>
+                <tspan x='45' y='71'>C</tspan>
+            </text>
+        </g>
+        <text id='X' sketch:type='MSTextLayer' font-family='Lato' font-size='36' font-weight='normal' fill='#000000'>
+            <tspan x='352' y='186'>X</tspan>
+        </text>
+    </g>
+</svg>")
